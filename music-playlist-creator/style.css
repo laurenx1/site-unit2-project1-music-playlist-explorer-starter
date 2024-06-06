@@ -43,7 +43,7 @@ header {
     padding-top: 0%;
 }
 
-#playlist-img {
+.playlist-img {
     width: 275px;
     height: 275px; 
     background-position: center;
