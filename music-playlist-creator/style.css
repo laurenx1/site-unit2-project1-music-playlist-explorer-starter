@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000000;
@@ -8,7 +8,7 @@ body {
 header {
     background: rgb(0,147,196);
     background: linear-gradient(90deg, rgba(0,147,196,1) 0%, rgba(195,0,218,1) 35%, rgba(255,151,0,1) 100%);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     color: #ffffff;
     text-align: center;
     padding: 0px;
@@ -138,3 +138,68 @@ header {
     text-decoration: none;
     cursor: pointer;
  }
+
+ .banner {
+    display: flex; 
+    align-items: center;
+    margin-bottom: 20px; 
+ }
+
+ .banner img {
+    width: 100px; 
+    height: 100px; 
+    margin-right: 20px; 
+    border-radius: 10px; 
+ }
+
+.playlist-desc h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.playlist-desc p {
+    margin: 5px 0 0; 
+    font-size: 1.2em; 
+}
+
+.songs {
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.songs > div {
+    display: flex; 
+    align-items: center; 
+    background: rgba(255, 255, 255, 0.2); /*light background for contrast*/
+    padding: 10px; 
+    border-radius: 10px; /*decide if you wanna keep this lol*/
+
+}
+
+.song {
+    width: 60px; 
+    height: 60px; 
+    margin-right: 10px; 
+}
+
+.song-info {
+    flex-grow: 1;
+}
+
+.song-info h3 {
+    margin: 0;
+    font-size: 1.5em; 
+}
+
+.song-info h4 {
+    margin: 5px 0 0; 
+    font-size: 1em; 
+    font-weight: normal; 
+}
+
+.songs p {
+    margin: 0; 
+    font-size: 1.2em; 
+    white-space: nowrap;
+}
