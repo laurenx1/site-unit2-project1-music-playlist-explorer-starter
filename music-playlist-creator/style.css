@@ -168,7 +168,7 @@ header {
     gap: 10px; 
 }
 
-.songs > div {
+.songs > li {
     display: flex; 
     align-items: center; 
     background: rgba(255, 255, 255, 0.2); /*light background for contrast*/
@@ -177,7 +177,7 @@ header {
 
 }
 
-.song {
+.songs img {
     width: 60px; 
     height: 60px; 
     margin-right: 10px; 
