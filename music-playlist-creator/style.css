@@ -31,6 +31,8 @@ header {
 
 .playlist-card:hover {
     background-color: #575757;
+    transform: scale(1.1);
+    transition: transform .2s
 }
 
 
@@ -113,8 +115,10 @@ header {
  }
  .modal-content {
     border-radius: 25px 25px 25px 25px;
-    background: rgb(0,147,196);
-    background: linear-gradient(90deg, rgba(0,147,196,1) 0%, rgba(195,0,218,1) 35%, rgba(255,151,0,1) 100%);
+    background: rgb(142,227,255);
+    background: linear-gradient(248deg, rgba(142,227,255,1) 0%, rgba(242,129,255,1) 35%, rgba(255,109,168,1) 62%, rgba(255,184,81,1) 100%);
+    /* background: rgb(0,147,196);
+    background: linear-gradient(90deg, rgba(0,147,196,1) 0%, rgba(195,0,218,1) 35%, rgba(255,151,0,1) 100%); */
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     /*border: 1px solid #888;*/
