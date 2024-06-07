@@ -81,7 +81,7 @@ function createPlaylistCards() {
                     <p class="creator">${playlist.playlist_creator}</p>
                 </div>
                 <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart">
+                    <img src="assets/img/pink_heart.png" alt="heart" class=heart>
                     <p class="like-count">${playlist.likeCount}</p>
                 </div>
             </div>
@@ -90,17 +90,27 @@ function createPlaylistCards() {
 
         newPlaylist.addEventListener('click', () => {
             populateModal(playlist);
+
         })
+
+        let reaction = document.createElement('div');
+        reaction.className = "reactions";
+        reaction.textContent = playlist.likeCount; 
+        reaction.addEventListener('click', (event) => {
+            playlist.likeCount ++; 
+            reaction.textContent = playlist.likeCount; 
+        } )
+        playlistContainer.appendChild(reaction); 
+
+        
     });
-
-
 
 }
 
+
+
 console.log(data);
 
-document.addEventListener('DOMContentLoaded', function () {
-    createPlaylistCards();
-})
+
 
 createPlaylistCards()

@@ -74,12 +74,12 @@ header {
 
 }
 
-.reactions img {
+.heart {
     width: 15px; 
     height: 15px;
 }
 
-.reactions p {
+.like-count {
     margin-top: 0;
     padding-right: 0%;
 }
