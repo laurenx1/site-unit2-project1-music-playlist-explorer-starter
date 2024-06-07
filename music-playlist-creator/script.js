@@ -1,7 +1,7 @@
 
 var playlists = document.getElementsByClassName("playlists")
-for (let i = 0; i < playlists.length; i++){
-    playlists[i].addEventListener("click", function() {
+for (let i = 0; i < playlists.length; i++) {
+    playlists[i].addEventListener("click", function () {
         openModal();
     })
 }
@@ -12,44 +12,86 @@ var modal = document.getElementById("playlist-modal");
 var span = document.getElementsByClassName("close")[0];
 
 function openModal(card) {
-   modal.style.display = "block";
+    modal.style.display = "block";
 }
 
-span.onclick = function() {
-   modal.style.display = "none";
+span.onclick = function () {
+    modal.style.display = "none";
 }
-window.onclick = function(event) {
-   if (event.target == modal) {
-      modal.style.display = "none";
-   }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+function populateModal(playlist) {
+    console.log('yo', playlist)
+    const modalContent = document.querySelector('.modal-content');
+    const bannerImg = modalContent.querySelector('.banner img');
+    const playlistTitle = modalContent.querySelector('.playlist-desc h1');
+    const playlistCreator = modalContent.querySelector('.playlist-desc p');
+    const songsList = modalContent.querySelector('.songs');
+    bannerImg.src = playlist.playlist_art;
+    playlistTitle.textContent = playlist.playlist_name;
+    playlistCreator.textContent = playlist.playlist_creator;
+
+    let songsHTML = '';
+    playlist.songs.forEach(song => {
+
+        songsHTML += `
+            <li class="song">
+                <img src=${song.cover_art}>
+                <div class="song-info">
+                    <h3 class="song-title">${song.title}</h3>
+                    <h4 class="song-artist">${song.artist}</h4>
+                    <h4 class="song-album">${song.album}<h4>
+                </div>
+                <p>${song.duration}</p>
+            </li>
+        `;
+    });
+    songsList.innerHTML = songsHTML;
+
+    // songsList = document.querySelector('.songs');
+    // songsList.innerHTML = '';
+    // songs.forEach(song => {
+    //     let newSong = document.createElement('li');
+    //     newSong.className = "song";
+    //     newSong.innerHTML = `
+    //         <img src="${song.cover_art}">
+    //     `;
+    // })
+
+
 }
 
 function createPlaylistCards() {
     // get playlists container
     const playlistContainer = document.querySelector('.playlists');
-    let playlistHTML = ''; 
 
     data.playlists.forEach(playlist => {
-        playlistHTML += `
-            <article class="playlist-card">
-                <img src="${playlist.playlist_art}" class="playlist-img">
-                <div class="playlist-info">
-                    <div class="playlist-name">
-                        <h1 class="title">${playlist.playlist_name}</h1>
-                        <p class="creator">${playlist.playlist_creator}</p>
-                    </div>
-                    <div class="reactions">
-                        <img src="assets/img/pink_heart.png" alt="heart">
-                        <p class="like-count">${playlist.likeCount}</p>
-                    </div>
+        let newPlaylist = document.createElement('article');
+        newPlaylist.className = "playlist-card";
+        newPlaylist.innerHTML = `
+            <img src="${playlist.playlist_art}" class="playlist-img">
+            <div class="playlist-info">
+                <div class="playlist-name">
+                    <h1 class="title">${playlist.playlist_name}</h1>
+                    <p class="creator">${playlist.playlist_creator}</p>
                 </div>
-            </article>
+                <div class="reactions">
+                    <img src="assets/img/pink_heart.png" alt="heart">
+                    <p class="like-count">${playlist.likeCount}</p>
+                </div>
+            </div>
         `;
+        playlistContainer.appendChild(newPlaylist);
+
+        newPlaylist.addEventListener('click', () => {
+            populateModal(playlist);
+        })
     });
-    playlistContainer.innerHTML = playlistHTML;
-
-    
-
 
 
 
@@ -57,8 +99,8 @@ function createPlaylistCards() {
 
 console.log(data);
 
-document.addEventListener('DOMContentLoaded', function() {
-     createPlaylistCards(); 
- })
+document.addEventListener('DOMContentLoaded', function () {
+    createPlaylistCards();
+})
 
 createPlaylistCards()
