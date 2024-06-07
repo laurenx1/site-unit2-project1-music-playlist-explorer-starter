@@ -45,6 +45,11 @@ header {
     padding-top: 0%;
 }
 
+.playlist-name{
+    width: 70%; 
+    margin-left: 10px; 
+}
+
 .playlist-img {
     width: 275px;
     height: 275px; 
@@ -65,19 +70,40 @@ header {
 
 .reactions {
     display: flex; 
-    flex-direction: row;
-    text-align: right;
-    justify-content: right;
+    align-items: right; 
     color: #ffffff;
     margin-top: 5%;
-    margin-left: 30%;
+    /* margin-left: 30%; */
+    float: right; 
 
 }
 
 .heart {
     width: 15px; 
     height: 15px;
+    color: #ff6da8
 }
+
+.heart:hover {
+    color: #f281ff
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heart.pop {
+    animation: pop 0.3s ease-in-out;
+}
+
 
 .like-count {
     margin-top: 0;

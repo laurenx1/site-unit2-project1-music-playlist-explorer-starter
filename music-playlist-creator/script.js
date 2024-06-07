@@ -81,8 +81,8 @@ function createPlaylistCards() {
                     <p class="creator">${playlist.playlist_creator}</p>
                 </div>
                 <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" class=heart>
-                    <p class="like-count">${playlist.likeCount}</p>
+                    <span class=heart> "♥" </span>
+                    <span class="like-count">${playlist.likeCount}</span>
                 </div>
             </div>
         `;
@@ -93,15 +93,21 @@ function createPlaylistCards() {
 
         })
 
-        let reaction = document.createElement('div');
-        reaction.className = "reactions";
-        reaction.textContent = playlist.likeCount; 
-        reaction.addEventListener('click', (event) => {
-            playlist.likeCount ++; 
-            reaction.textContent = playlist.likeCount; 
-        } )
-        playlistContainer.appendChild(reaction); 
+        const heart = newPlaylist.querySelector('.heart');
+        heart.textContent = "♥";
+        const likeCount = newPlaylist.querySelector('.like-count');
 
+        heart.addEventListener('click', (event) => {
+            event.stopPropagation();
+            playlist.likeCount++; 
+            likeCount.textContent = playlist.likeCount; 
+
+            heart.classList.add('pop');
+
+            heart.addEventListener('animationend', ()=> {
+                heart.classList.remove('pop');
+            }, {once: true});
+        })
         
     });
 
