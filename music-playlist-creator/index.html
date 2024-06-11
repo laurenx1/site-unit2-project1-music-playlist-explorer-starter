@@ -13,121 +13,25 @@
     <header id="banner">
         <!-- Your header content here -->
         <h1 id="page-title"> Music Playlist Explorer </h1>
+        <button id="featured-button">Featured Playlist</button>
     </header>
 
     <main class="playlists"> 
-        <!-- Your main content here -->
-        <!-- <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div> -->
-            
-        <!-- </article>
-        <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div>
-        </article>
-        <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div>
-        </article>
-        <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="playlist-card"> 
-            <div class="playlist-img" style="background-image: url('/site-unit2-project1-music-playlist-explorer-starter/music-playlist-creator/assets/img/blond_album_cover.png')"></div>
-            <div class="playlist-info">
-                <div id="playlist-name">
-                    <h1 class="title"> playlist title </h1>
-                    <p class="creator">creator name</p>
-                </div>
-                <div class="reactions">
-                    <img src="assets/img/pink_heart.png" alt="heart" >
-                    <p class="like-count"> 1</p>
-                </div>
-            </div>
-        </article> -->
-
+        <!-- playlist stuff will be filled in by JavaScript -->
     </main>
+
+    <div id="featured-page" style="display: none;">
+        <div class="featured-content">
+            <img id="featured-img" src="" alt="Playlist Art">
+            <h1 id="featured-title"></h1>
+            <p id="featured-creator"></p>
+        </div>
+        <ul class="songs" id="featured-songs">
+            <!-- featurd songs will be filled in by JavaScript -->
+        </ul>
+    </div>
+
+
     <div id="playlist-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>

@@ -138,7 +138,15 @@ function createPlaylistCards() {
 
 }
 
+function showFeaturedPage() {
+    const featuredPage = document.getElementById('featured-page');
+    const playlistContainer = document.querySelector('.playlists');
+    playlistContainer.style.display = 'none';
+    featuredPage.style.display = 'block';
 
+    const randomPlaylist = data.playlists[Math.floor(Math.random() * data.playlists.length)];
+    const featuredImg = document
+}
 
 console.log(data);
 
