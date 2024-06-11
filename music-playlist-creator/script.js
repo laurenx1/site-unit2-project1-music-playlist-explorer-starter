@@ -10,6 +10,7 @@ for (let i = 0; i < playlists.length; i++) {
 // JavaScript for Opening and Closing the Modal
 var modal = document.getElementById("playlist-modal");
 var span = document.getElementsByClassName("close")[0];
+var shuffleButton = null; 
 
 function openModal(card) {
     modal.style.display = "block";
@@ -21,6 +22,13 @@ span.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    }
+}
+
+function shuffleSongs(songs) {
+    for (let i = songs.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [songs[i], songs[j]] = [songs[j], songs[i]]
     }
 }
 
@@ -42,16 +50,33 @@ function populateModal(playlist) {
         songsHTML += `
             <li class="song">
                 <img src=${song.cover_art}>
-                <div class="song-info">
+                <span class="song-info">
                     <h3 class="song-title">${song.title}</h3>
                     <h4 class="song-artist">${song.artist}</h4>
                     <h4 class="song-album">${song.album}<h4>
-                </div>
+                </span>
                 <p>${song.duration}</p>
             </li>
         `;
     });
     songsList.innerHTML = songsHTML;
+
+    // const banner = document.querySelector('.banner')
+
+
+    if (!shuffleButton) {
+        shuffleButton = document.createElement('button');
+        shuffleButton.textContent = "Shuffle Songs"; 
+        shuffleButton.className = "shuffle-button"; 
+        playlistCreator.parentNode.insertBefore(shuffleButton, playlistCreator.nextSibling);
+
+        shuffleButton.addEventListener('click', () => {
+            shuffleSongs(playlist.songs);
+            populateModal(playlist);
+        })
+    }
+
+    
 
     // songsList = document.querySelector('.songs');
     // songsList.innerHTML = '';
