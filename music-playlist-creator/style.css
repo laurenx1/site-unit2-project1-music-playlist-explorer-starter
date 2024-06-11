@@ -15,9 +15,13 @@ header {
     margin-bottom: 20px;
     display: flex;
     font-weight: 50;
-    border-radius: 0px 0px 40px
+    border-radius: 0px 0px 40px;
    
 }
+header h1 {
+    margin-left: 10px;
+}
+
 
 
 .playlist-card {
