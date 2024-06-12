@@ -145,11 +145,35 @@ function showFeaturedPage() {
     featuredPage.style.display = 'block';
 
     const randomPlaylist = data.playlists[Math.floor(Math.random() * data.playlists.length)];
-    const featuredImg = document
+    const featuredImg = document.getElementById('featured-img');
+    const featuredTitle = document.getElementById('featured-title');
+    const featuredCreator = document.getElementById('featured-creator');
+    const featuredSongs = document.getElementById('featured-songs');
+
+    featuredImg.src = randomPlaylist.playlist_art; 
+    featuredTitle.textContent = randomPlaylist.playlist_name; 
+    featuredCreator.textContent = randomPlaylist.playlist_creator; 
+
+    let songsHTML = '';
+    randomPlaylist.songs.forEach(song => {
+        songsHTML += `
+            <li class="song">
+                <img src=${song.cover_art}>
+                <div class="song-info">
+                    <h3 class="song-title">${song.title}<h3>
+                    <h4 class="song-artist">${song.artist}</h4>
+                    <h4 class="song-album">${song.album}</h4>
+                </div>
+                <p>${song.duration}</p>
+            </li>
+        `;
+    })
+    featuredSongs.innerHTML = songsHTML; 
 }
 
-console.log(data);
+document.getElementById('featured-button').addEventListener('click', showFeaturedPage);
 
+console.log(data);
 
 
 createPlaylistCards()
